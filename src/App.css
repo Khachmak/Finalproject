@@ -1,38 +1,135 @@
-.App {
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header Styles */
+.header {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1 {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Filter Styles */
+.filter-container {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.filter-container label {
+  margin-right: 10px;
+}
+
+.filter-container select {
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.filter-container button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-container button:hover {
+  background: #218838;
+}
+
+/* Trainings List Styles */
+.trainings-list {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.training-item {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.training-item:last-child {
+  border-bottom: none;
+}
+
+.training-item h3 {
+  margin-top: 0;
+}
+
+.training-item button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.training-item button:hover {
+  background: #0069d9;
+}
+
+
+/* Registration Form Styles */
+.registration-form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Added to maintain width */
+}
+
+.registration-form button {
+  background-color: #28a745;
   color: white;
+  border: none;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.registration-form button:hover {
+  background-color: #218838;
 }

@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import { trainingsData } from "./trainingsData";
+import TrainingsList from "./trainingsList";
+import Filter from "./Filter";
 
 function App() {
+  const [trainings, setTrainings] = useState([]);
+  const [filters, setFilters] = useState({ rank: "", location: "" });
+  const [isSearchPerformed, setIsSearchPerformed] = useState(false);
+  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
+
+  const handleSearch = () => {
+    const filteredTrainings = trainingsData.filter((training) => {
+      return (
+        (filters.rank === "" || training.recommendedRanks.includes(filters.rank)) &&
+        (filters.location === "" || training.location === filters.location)
+      );
+    });
+    setTrainings(filteredTrainings);
+    setIsSearchPerformed(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-container">
+      <header className="header">
+        <h1>Welcome to Excellency Academy</h1>
       </header>
+      {!isRegistrationFormOpen && (
+        <Filter setFilters={setFilters} onSearch={handleSearch} />
+      )}
+      {isSearchPerformed && (
+        <TrainingsList 
+          trainings={trainings} 
+          setIsRegistrationFormOpen={setIsRegistrationFormOpen} 
+        />
+      )}
     </div>
   );
 }
 
 export default App;
+
